@@ -40,6 +40,10 @@ def main():
             ix2pr = mapping[corpus[sequence_index][index]]
             corpus[sequence_index][index] = ix2pr
 
+    # Convert it into id - sequence
+    corpus = pd.DataFrame({'sequence' : sequences_splitted, 'id': enumerate(sequences_splitted)})
+    print(corpus)
+
     # Create 'k-mers' corpus: (non-overlapping 3-grams)
     # TODO - index-3mer mapping
     # TODO - Corpus 3mer conversion
